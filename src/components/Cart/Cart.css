@@ -9,3 +9,29 @@
   border: 1px solid #000;
   min-height: 600px;
 }
+.cart-button-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 6px auto;
+  gap: 6px;
+}
+.cart-button-container button {
+  padding: 9px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  cursor: pointer;
+}
+.cart-button-container button.choose {
+  background-color: #06b6d4;
+}
+.cart-button-container button.clear {
+  background-color: #f43f5e;
+}
+.cart-button-container button.choose:hover {
+  background-color: #0e7490;
+}
+.cart-button-container button.clear:hover {
+  background-color: #be123c;
+}
