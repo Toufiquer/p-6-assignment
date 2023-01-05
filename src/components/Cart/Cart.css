@@ -1,0 +1,9 @@
+.cart {
+  background-color: aqua;
+  position: relative;
+}
+.cart-container {
+  position: sticky;
+  top: 0;
+  padding: 10px;
+}
