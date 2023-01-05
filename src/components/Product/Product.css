@@ -22,6 +22,8 @@ p {
   bottom: 0;
   left: 0;
   width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 .product .button-container button {
   cursor: pointer;
@@ -29,6 +31,11 @@ p {
   width: 50%;
   padding: 6px;
   font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
 }
 .product .button-container button.add {
   background-color: #67e8f9;
@@ -41,4 +48,7 @@ p {
 }
 .product .button-container button.remove:hover {
   background-color: #be123c;
+}
+
+.product .button-container button svg {
 }

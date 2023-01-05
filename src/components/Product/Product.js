@@ -1,4 +1,5 @@
 import React from "react";
+import { iconCart, iconDelete } from "../icons/fontawesome";
 import "./Product.css";
 const Product = ({ product: { id, name, picture, price } }) => {
   return (
@@ -11,8 +12,11 @@ const Product = ({ product: { id, name, picture, price } }) => {
         <strong>Details:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae corrupti perferendis reprehenderit nihil odio?
       </p>
       <div className="button-container">
-        <button className="add">Add To Cart</button>
-        <button className="remove">Remove From Cart</button>
+        <button className="add">
+          <span>Add To Cart </span>
+          {iconCart()}
+        </button>
+        <button className="remove">Remove From Cart {iconDelete()}</button>
       </div>
     </div>
   );
