@@ -2,7 +2,7 @@
   border: 1px solid black;
   margin: 4px;
   padding: 9px;
-  min-height: 400px;
+  min-height: 550px;
   position: relative;
   margin-bottom: 19px;
 }
@@ -14,6 +14,8 @@ p {
 }
 .product img {
   width: 100%;
+  height: 340px;
+  object-fit: cover;
 }
 .product .button-container {
   position: absolute;

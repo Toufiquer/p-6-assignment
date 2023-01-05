@@ -1,5 +1,4 @@
 import React from "react";
-import Products from "../Products/Products";
 import "./Cart.css";
 const Cart = () => {
   return (
