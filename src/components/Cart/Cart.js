@@ -1,5 +1,6 @@
 import React from "react";
 import CartItem from "../CartItem/CartItem";
+import { handleChooseMe, handleClear } from "../utilities/eventHandler";
 import "./Cart.css";
 const Cart = ({ cartProducts }) => {
   const newCart = [...cartProducts];
@@ -12,8 +13,12 @@ const Cart = ({ cartProducts }) => {
           <CartItem key={singleCart.id} singleCart={singleCart}></CartItem>
         ))}
         <div className="cart-button-container">
-          <button className="choose">Choose For Me</button>
-          <button className="clear">Clear All</button>
+          <button onClick={() => handleChooseMe(newCart)} className="choose">
+            Choose For Me
+          </button>
+          <button onClick={() => handleClear()} className="clear">
+            Clear All
+          </button>
         </div>
       </div>
     </div>

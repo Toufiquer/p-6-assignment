@@ -1,14 +1,17 @@
 import React from "react";
-import { iconDelete } from "../icons/fontawesome";
+import { handleSingleCart } from "../utilities/eventHandler";
+import { iconDelete } from "../icons/fontAwesome";
 import "./cartItem.css";
-const CartItem = ({ singleCart: { id, price, picture, name } }) => {
+const CartItem = ({ singleCart: { id, picture, name } }) => {
   return (
     <div className="cartItem">
       <img src={picture} alt={name} />
       <p>
         <strong>Name:</strong> {name}
       </p>
-      <span className="icon">{iconDelete("28px", "28px")}</span>
+      <span onClick={() => handleSingleCart(id)} className="icon">
+        {iconDelete("28px", "28px")}
+      </span>
     </div>
   );
 };
