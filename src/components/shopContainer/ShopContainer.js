@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 import Shop from "../Shop/Shop";
+import { getRandomNumber } from "../utilities/calculation";
 import { cartToProducts } from "../utilities/filterProducts";
-import { getStoredCart } from "../utilities/manageDB";
+import { getStoredCart, handleChooseItem } from "../utilities/manageDB";
 import "./ShopContainer.css";
 let fnShowUiCart = () => {};
 let fnChooseMe = () => {};
@@ -19,23 +20,32 @@ const ShopContainer = () => {
   useEffect(() => {
     const getCart = getStoredCart();
     const getCartProducts = cartToProducts(getCart, products);
-    console.log(getCartProducts, " => Line No: 20");
     if (getCartProducts.length === 0) {
-      console.log("length is 0", " => Line No: 22");
     } else {
       getCartProducts.length > 4 && (getCartProducts.length = 4);
-      console.log(getCartProducts, " => Line No: 27");
       setCartProducts(getCartProducts);
     }
   }, [products]);
   const showUiCart = () => {
-    console.log("update Ui", " => Line No: 32");
     const getCart = getStoredCart();
     const getCartProducts = cartToProducts(getCart, products);
     setCartProducts(getCartProducts);
   };
   const chooseForMe = () => {
-    console.log("call choose me", " => Line No: 38");
+    const newCartProducts = [...cartProducts];
+    let cartProductsLength = cartProducts.length;
+    if (cartProductsLength > 1) {
+      const number = getRandomNumber(cartProductsLength);
+      const chosenProduct = newCartProducts[number - 1];
+      if (!chosenProduct) {
+        return chooseForMe();
+      }
+      console.log(chosenProduct.id, " => Line No: 40");
+      handleChooseItem(chosenProduct.id);
+      fnShowUiCart();
+    } else {
+      alert("minimum select two item for choose one");
+    }
   };
   fnChooseMe = chooseForMe;
   fnShowUiCart = showUiCart;

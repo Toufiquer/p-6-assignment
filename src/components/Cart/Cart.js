@@ -5,7 +5,6 @@ import "./Cart.css";
 const Cart = ({ cartProducts }) => {
   cartProducts.length > 4 && (cartProducts.length = 4);
   if (cartProducts.length === 0) {
-    console.log(cartProducts, " => Line No: 18");
     return (
       <div className="cart">
         <div className="cart-container">
@@ -16,7 +15,6 @@ const Cart = ({ cartProducts }) => {
     );
   }
   if (cartProducts.length >= 1) {
-    console.log(cartProducts, " => Line No: 18");
     return (
       <div className="cart">
         <div className="cart-container">

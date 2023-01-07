@@ -9,7 +9,7 @@ const handleRemoveFromCart = (id) => {
   handleRemoveItemDB(id);
   fnShowUiCart();
 };
-const handleChooseMe = (id) => {
+const handleChooseMe = () => {
   fnChooseMe();
   fnShowUiCart();
 };

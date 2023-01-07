@@ -20,6 +20,11 @@ const handleSetItemDB = (id) => {
   }
   setItemDB(cart);
 };
+const handleChooseItem = (id) => {
+  let cart = {};
+  cart[id] = 1;
+  setItemDB(cart);
+};
 const handleRemoveItemDB = (id) => {
   let cart = getStoredCart();
   if (cart[id] === 1) {
@@ -29,4 +34,4 @@ const handleRemoveItemDB = (id) => {
   }
   setItemDB(cart);
 };
-export { handleRemoveItemDB, handleSetItemDB, getStoredCart };
+export { handleRemoveItemDB, handleSetItemDB, getStoredCart, handleChooseItem };
