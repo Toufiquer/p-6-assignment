@@ -1,4 +1,4 @@
-const getItemDB = () => {
+const getStoredCart = () => {
   let cart = localStorage.getItem("cart");
   if (cart) {
     cart = JSON.parse(cart);
@@ -11,7 +11,7 @@ const setItemDB = (cart) => {
   localStorage.setItem("cart", JSON.stringify(cart));
 };
 const handleSetItemDB = (id) => {
-  let cart = getItemDB();
+  let cart = getStoredCart();
   if (cart[id]) {
     alert("You Already Have This Item.");
     // cart[id] += 1;
@@ -21,7 +21,7 @@ const handleSetItemDB = (id) => {
   setItemDB(cart);
 };
 const handleRemoveItemDB = (id) => {
-  let cart = getItemDB();
+  let cart = getStoredCart();
   if (cart[id] === 1) {
     delete cart[id];
   } else if (cart[id] > 1) {
@@ -29,4 +29,4 @@ const handleRemoveItemDB = (id) => {
   }
   setItemDB(cart);
 };
-export { handleRemoveItemDB, handleSetItemDB };
+export { handleRemoveItemDB, handleSetItemDB, getStoredCart };

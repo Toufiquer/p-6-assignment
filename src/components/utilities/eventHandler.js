@@ -1,19 +1,24 @@
+import { fnChooseMe, fnShowUiCart } from "../shopContainer/ShopContainer";
 import { handleRemoveItemDB, handleSetItemDB } from "./manageDB";
 
 const handleAddToCart = (id) => {
   handleSetItemDB(id);
+  fnShowUiCart();
 };
 const handleRemoveFromCart = (id) => {
   handleRemoveItemDB(id);
+  fnShowUiCart();
 };
 const handleChooseMe = (id) => {
-  console.log("handleChooseMe Add to Cart", id, " => Line No: 2");
+  fnChooseMe();
+  fnShowUiCart();
 };
 const handleSingleCart = (id) => {
-  console.log("handleSingleCart", id, " => Line No: 2");
+  handleRemoveItemDB(id);
+  fnShowUiCart();
 };
 const handleClear = () => {
   localStorage.removeItem("cart");
-  console.log("handleClear", " => Line No: 2");
+  fnShowUiCart();
 };
 export { handleAddToCart, handleChooseMe, handleRemoveFromCart, handleSingleCart, handleClear };
