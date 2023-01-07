@@ -13,7 +13,8 @@ const setItemDB = (cart) => {
 const handleSetItemDB = (id) => {
   let cart = getItemDB();
   if (cart[id]) {
-    cart[id] += 1;
+    alert("You Already Have This Item.");
+    // cart[id] += 1;
   } else {
     cart[id] = 1;
   }

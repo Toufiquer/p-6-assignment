@@ -13,6 +13,7 @@ const handleSingleCart = (id) => {
   console.log("handleSingleCart", id, " => Line No: 2");
 };
 const handleClear = () => {
+  localStorage.removeItem("cart");
   console.log("handleClear", " => Line No: 2");
 };
 export { handleAddToCart, handleChooseMe, handleRemoveFromCart, handleSingleCart, handleClear };
